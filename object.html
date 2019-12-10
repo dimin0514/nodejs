@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+window.onload = function(){
+	function Person(name, gender){
+		let _name = name;
+		let _gender = gender;
+		let _age
+		this.getname=function(){
+			return _name
+		}
+		this.getgender = function(){
+			return _gender
+		}
+		this.setAge = function(age){
+			_age = age
+		}
+		this.getAge = function(){
+			return _age
+		}
+		this.tostring =function(){
+
+		}
+		
+		console.log(`hi My name is`+this.getname);
+	}
+	let person = new Person('홍길동','남')
+	person.setAge('20')
+	
+	alert(`${person.getname()} (${person.getgender()}) ${person.getAge()}`)
+
+}	
+</script>
+</body>
+</html>

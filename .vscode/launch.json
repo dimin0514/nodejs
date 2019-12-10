@@ -43,6 +43,30 @@
       "port": 9240,
       "webRoot": "${workspaceFolder}",
       "url": "http://127.0.0.1:52450/p/catdog/switch.html?_cmAuth\u003duxhzkilngy"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (5)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9203,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:52450/p/catdog/loop.html?_cmAuth\u003duxhzkilngy"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (6)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9247,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:52450/p/catdog/login.html?_cmAuth\u003duxhzkilngy"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (7)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9279,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:52450/p/catdog/object.html?_cmAuth\u003duxhzkilngy"
     }
   ]
 }

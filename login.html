@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box"></div>
+<script>
+window.onload = function(){
+	const temp =  `<form id = "form_join" class="form-signin">
+		    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		    <label for="inputEmail" class="sr-only">Email address</label>
+			<input type="text" id="uid" value="01ph63" class="form-control" placeholder="Email address" required="" autofocus="">
+			<br/>
+		    <label for="inputPassword" class="sr-only">Password</label>
+		    <input type="password" id="pwd" value="1" class="form-control" placeholder="Password" required="">
+			<br>
+			<input type="button" id="btn" value="로그인">
+			<div class="checkbox mb-3">
+		      <label>
+		      <a id = "a_go_join" href="#">회원가입</a>
+		      </label>
+		      <label>
+		      <a id = "a_go_admin" href="#">관리자모드</a>
+		      </label>
+		    </div>
+		    <div id="btn_login"></div>
+		    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+		  </form>`
+	const box = document.getElementById('box')
+	box.innerHTML = temp
+	function Member(){
+		let uid,pwd
+		this.setUid = x =>{uid = x}
+		this.getUid = () =>{return uid}
+		this.setPwd = x =>{pwd = x}
+		this.getPwd = () =>{return pwd}
+		/* let _uid, _pwd
+		this.setUid = function(uid){
+			_uid=uid
+		}
+		this.getUid = function(){
+			return _uid 
+		}
+		this.setPassword = function(password){
+			_pwd = password
+		}
+		this.getPassword = function(){
+			return _pwd
+		}
+		this.tostring = function(){
+			`${_uid},${_pwd}`
+		} */
+
+	}
+	
+	btn.addEventListener('click',function(){
+		const member = new Member()
+		const uid = document.getElementById('uid')
+		const pwd = document.getElementById('pwd')
+		const btn = document.getElementById('btn')
+		member.setUid(uid.value)
+		member.setPwd(pwd.value)
+		alert(`담긴 아이디 ${member.getUid()} 담긴 패스워드 ${member.getPwd()}`)
+		location.href = `login_success.html`
+	})
+
+
+}	
+</script>
+	
+</body>
+</html>
