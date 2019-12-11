@@ -1,27 +1,25 @@
 function Initalizer(){
 	this.vendingMachine = function(){
-		vendingMachine.prototype.setChange = function(change){_change = change}
-		vendingMachine.prototype.getChange = function(){return _change}
-		vendingMachine.prototype.setItemNo = function(itemNo){_itemNo = itemNo}
-		vendingMachine.prototype.getItemNo = function(){return _itemNo}
-		vendingMachine.prototype.setItemNoList = function(itemNoList){_itemNoList = itemNoList}
-		vendingMachine.prototype.getItemNoList = function(){return _itemNoList}
-		vendingMachine.prototype.setItemList = function(itemList){_itemList = itemList}
-		vendingMachine.prototype.getItemList = function(){return _itemList}
+		VendingMachine.prototype.setChange = function(change){_change = change}
+		VendingMachine.prototype.getChange = function(){return _change}
+		VendingMachine.prototype.setItemNo = function(itemNo){_itemNo = itemNo}
+		VendingMachine.prototype.getItemNo = function(){return _itemNo}
+		VendingMachine.prototype.setItemNoList = function(itemNoList){_itemNoList = itemNoList}
+		VendingMachine.prototype.getItemNoList = function(){return _itemNoList}
+		VendingMachine.prototype.setItemList = function(itemList){_itemList = itemList}
+		VendingMachine.prototype.getItemList = function(){return _itemList}
 
 	}
 }
 function VendingMachineService(){
-	this.intertCoin = function(coin){
+	this.insertCoin = function(coin){
 		const init = new Initalizer()
 		init.vendingMachine()
-		const vm = new vendingMachine()
+		const vm = new VendingMachine()
 		vm.setChange(coin)
-		alert(`${init.getChange()}원을 받음`)
+		alert(`${vm.getChange()}원을 받음`)
 	}
 	this.selectItem = function(itemNo, quantity){}
-	this.returnChange() = function(){}
+	this.returnChange = function(){}
 	this.handleOrder = function(quantity, price, itemName){}
-
-
 }
