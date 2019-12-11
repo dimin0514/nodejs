@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="Component.js"></script>
+	<script src="VendingMachine.js"></script>
+	<script src="VendingMachineService.js"></script>
+</head>
+<body>
+<div id="box">
+	공유하는 프로퍼티 : change, itemNo, itemNoList, itemList
+	공유하는 메소드
+	동전투임 : insertCoin(coin) 
+	상품선택 : selectItem(itemNo, quantity)
+	잔액반환 : returnChange()
+	주문처리 : handleOrder(quantity, price, itemName)
+</div>
+
+</body>
+<script>
+window.onload = function(){
+	const inputText = new Factory('inputText')
+	const inputButton = new Factory('inputButton')
+	const br = new Factory('br')
+	const box = document.getElementById('box')
+	box.remove()
+	document.body.appendChild(inputText.make())
+	document.body.appendChild(br.make())
+	document.body.appendChild(inputButton.make())
+
+	const btn = document.getElementById('btn')
+	btn.addEventListener('click',function(){
+		const val = document.getElementById('val')
+		const vms = new VendingMachineService()
+		vms.inserCoin(val.value)
+		alert('클릭 성공!!'+val.value)
+	})
+
+}
+</script>
+</html>

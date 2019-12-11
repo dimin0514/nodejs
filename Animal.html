@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="Animal.js"></script>
+	<script src="AnimalService.js"></script>
+</head>
+<body>
+<script>
+
+window.onload = function(){
+	const init = new Initalizer()
+	init.animal()
+	const a = new Animal()
+	a.setName('고양이')
+	alert(`동물이름 : ${a.getName()}`)
+	init.human()
+	let b = new Human()
+	b.setName('홍길동')
+	alert(`사람이름 : ${b.test()}`)
+	init.superHero()
+	let c = new SuperHero()
+	c.setName('아이언맨')
+	alert(`슈퍼히어로 이름 : ${c.exam()}`)
+}
+
+/* function Animal(name){this.name = name}
+function Human(){Animal.apply(this, arguments)}
+function SuperHero(){Human.apply(this, arguments)}
+function Main(){
+	return {
+		test : function(){
+			alert ('클로저 테스트')
+			Animal.prototype.setName = function(name){this.name = name}
+	Animal.prototype.getName = function(){return this.name}
+		}
+	}
+}
+window.onload = function(){
+	let main = new Main()
+	main.test()
+	let a = new Animal('고양이')
+	a.setName('고양이')
+	alert(`동물이름 : ${a.getName()}`) 
+	Human.prototype = new Animal()
+	Human.prototype.test = function(){
+		alert(`Human SetName ${this.name}`)
+	} 
+	let b = new Human('인간')
+	
+	SuperHero.prototype = new Human()
+	SuperHero.prototype.setName = function(){
+		alert(`SuperHero SetName ${this.name}`)
+	} 
+	let c = new SuperHero('슈퍼히어로')
+
+}	 */
+</script>
+</body>
+</html>

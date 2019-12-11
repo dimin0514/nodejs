@@ -9,32 +9,24 @@
 <body>
 <script>
 window.onload = function(){
-	function Person(name, gender){
-		let _name = name;
-		let _gender = gender;
-		let _age
-		this.getname=function(){
-			return _name
-		}
-		this.getgender = function(){
-			return _gender
-		}
-		this.setAge = function(age){
-			_age = age
-		}
-		this.getAge = function(){
-			return _age
-		}
-		this.tostring =function(){
+	function Person(){let _name,_gender, _age}
+	// person.prototype = function(){return _name}
+	person.prototype.getname = function(){return _name}
+	person.prototype.getgender = function(){return _gender}
+	person.prototype.setAge = function(age){_age = age}
+	person.prototype.getAge = function(){return _age}
+	Person.prototype.tostring = function(){return `${person.getname()} (${person.getgender()}) ${person.getAge()}`}
 
-		}
-		
-		console.log(`hi My name is`+this.getname);
-	}
+
+
 	let person = new Person('홍길동','남')
+	let kim = new Persion()
 	person.setAge('20')
+	person.prototype.abc = function(){}
+	person.def = function(){} 
 	
 	alert(`${person.getname()} (${person.getgender()}) ${person.getAge()}`)
+	// alert(person.tostring())
 
 }	
 </script>
