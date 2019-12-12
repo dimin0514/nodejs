@@ -8,6 +8,7 @@
 	<script src="Component.js"></script>
 	<script src="VendingMachine.js"></script>
 	<script src="VendingMachineService.js"></script>
+	<script src="VendingMachineUtil.js"></script>
 </head>
 <body>
 <div id="box">
@@ -22,21 +23,93 @@
 </body>
 <script>
 window.onload = function(){
-	const inputText = new Factory('inputText')
-	const inputButton = new Factory('inputButton')
-	const br = new Factory('br')
 	const box = document.getElementById('box')
-	box.remove()
-	document.body.appendChild(inputText.make())
-	document.body.appendChild(br.make())
-	document.body.appendChild(inputButton.make())
+	box.textContent = ''
+	box.appendChild(compo.inputText('money','text'))
+	box.appendChild(compo.br('br'))
+	box.appendChild(compo.inputButton('btn','button','동전투입'))
+	document
+	.getElementById('btn')
+	.addEventListener('click', function(){
+		service.insertCoin(document.getElementById('money').value) 
+		box.innerHTML = ''
+		box.appendChild(compo.div('coke'))
+		document.getElementById('coke').textContent = '1. 콜라 800원'
+		box.appendChild(compo.div('cider'))
+		document.getElementById('cider').textContent = '2. 사이다 700원 '
+		box.appendChild(compo.div('juice'))
+		document.getElementById('juice').textContent = '3. 주스 1000원'
+		box.appendChild(compo.inputText('menu','text'))
+		box.appendChild(compo.br())
+		box.appendChild(compo.inputButton('btn','button','메뉴선택'))
+		const menu = document.getElementById('menu')
+		const btn = document.getElementById('menu')
 
-	const btn = document.getElementById('btn')
-	btn.addEventListener('click',function(){
-		const val = document.getElementById('val')
+/* window.onload = function(){
+
+	const box = document.getElementById('box')
+	box.textContent = ''
+	box.appendChild(compo.inputText('money','text'))
+	box.appendChild(compo.br())
+	box.appendChild(compo.inputButton('btn','button','동전투입'))
+	btn.addEventListener('click', function(){
+		const money = document.getElementById('money')
 		const vms = new VendingMachineService()
-		vms.insertCoin(val.value)
-		
+		vms.insertCoin(money.value) 
+		box.innerHTML = ''
+		const div = new Factory('div')
+		box.appendChild(div.make('coke'))
+		const coke = document.getElementById('coke')
+		coke.textContent = '1. 콜라 800원'
+		box.appendChild(div.make('cider'))
+		const cider = document.getElementById('cider')
+		cider.textContent = '2. 사이다 700원 '
+		box.appendChild(div.make('juice'))
+		const juice = document.getElementById('juice')
+		juice.textContent = '3. 주스 1000원'
+		const inputText = new Factory('inputText')
+		const inputButton = new Factory('inputButton')
+		const br = new Factory('br')
+		box.appendChild(inputText.make('menu','text'))
+		box.appendChild(br.make())
+		box.appendChild(inputButton.make('btn','button','메뉴선택'))
+		const menu = document.getElementById('menu')
+		const btn = document.getElementById('btn')
+		btn.addEventListener('click',compo.div())
+ */
+
+		// const div = new Factory('div')
+		// document.body.appendChild(div.make(id,text))
+
+
+		// const util = new Looping()
+		// alert(util.forTest([3, 9, 4, 2, 7, 6]))
+		// alert(util.forEachTest([3, 14, 17, 12, 7, 6]))
+		// alert(util.mapTest([3, 9, 4, 2, 7, 6]))
+		// alert(util.findTest([3, 12, 4, 2, 7, 6]))
+/* 		alert(util.findTest2([{id : 4,name : '사'},
+							{id : 5, name : '오'},
+							{id : 6, name : '육'},
+							{id : 7, name : '칠'}], 8)) */
+		// alert(util.reduceTest([1, 2, 3, 4, 5]))
+		// alert(util.filterTest([3, 10, 17, 12, 7, 6]))
+/* 		alert(util.ofTest([{id : 4,name : '사'},
+							{id : 5, name : '오'},
+							{id : 6, name : '육'},
+							{id : 7, name : '칠'}])) */
+		// alert(util.fromTest([1, 2, 3]))
+		// alert(util.argumentsTest(1, 2, 3))
+		// alert(util.joinTest('안녕', '내', '친구'))
+		// alert(util.sortTest('Banana', 'Orange', 'Apple'))
+		// alert(util.reverseTest('Banana', 'Orange', 'Apple'))
+/* 		alert(util.todos([
+			{ id: 4, content: 'JavaScript' },
+			{ id: 1, content: 'HTML' },
+			{ id: 2, content: 'CSS' }
+		])) */
+
+
+
 	})
 
 }
