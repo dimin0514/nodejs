@@ -8,9 +8,9 @@
       "name": "Launch Chrome 127.0.0.1",
       "type": "chrome",
       "request": "launch",
-      "port": 9275,
+      "port": 9205,
       "webRoot": "${workspaceFolder}",
-      "url": "http://127.0.0.1:52450/p/catdog/index.html?_cmAuth\u003duxhzkilngy"
+      "url": "http://127.0.0.1:52450/p/CATDOG-NODEJS/Cart.html?_cmAuth\u003duxhzkilngy"
     },
     {
       "name": "Launch Chrome 127.0.0.1 (1)",
